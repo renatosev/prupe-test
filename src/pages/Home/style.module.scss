@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  background: url('/images/podologia-bg.png') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(16, 24, 40, 0.7);
+    z-index: 1;
+  }
+
+  .overlay {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    border-radius: 10px;
+    color: white;
+    max-width: 1200px;
+
+    .logo {
+      width: 200px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      font-weight: normal;
+    }
+
+    p {
+      margin-bottom: 2rem;
+      line-height: 1.5;
+      font-size: 1.3rem;
+    }
+
+    .socialIcons {
+      display: flex;
+      justify-content: left;
+      gap: 1rem;
+
+      a img {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    .overlay {
+      padding: 1rem;
+
+      .logo {
+        width: 150px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .socialIcons a img {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 480px) {
+  .header {
+    .overlay {
+      padding: 0.5rem;
+
+      .logo {
+        width: 120px;
+      }
+
+      h1 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .socialIcons a img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}

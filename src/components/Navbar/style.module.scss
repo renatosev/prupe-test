@@ -1,0 +1,128 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #e0e0e0;
+  transition: top 0.3s;
+
+  &.hidden {
+    top: -100px;
+  }
+
+  &.visible {
+    top: 0;
+  }
+
+  .logo img {
+    width: 80px;
+  }
+
+  .navLinks {
+    display: flex;
+    list-style: none;
+
+    li {
+      margin-left: 2rem;
+
+      a {
+        text-decoration: none;
+        color: #475467;
+        font-size: 1.2rem;
+        font-family: 'Inter', sans-serif;
+      }
+
+      &.closeMenu {
+        display: none;
+        cursor: pointer;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    div {
+      width: 25px;
+      height: 2px;
+      background: #475467;
+      margin: 4px 0;
+      transition: all 0.3s;
+    }
+  }
+
+  .hamburger.open .bar1 {
+    transform: rotate(-45deg) translate(-7.6px, 8.6px);
+  }
+
+  .hamburger.open .bar2 {
+    opacity: 0;
+  }
+
+  .hamburger.open .bar3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  @media (max-width: 768px) {
+    .navLinks {
+      position: absolute;
+      top: 95px;
+      right: 0;
+      height: calc(100vh - 80px);
+      width: 70%;
+      background: #ffff;
+      flex-direction: column;
+      align-items: center;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+
+      li {
+        margin: 1.5rem 0;
+      }
+    }
+
+    .navLinks.open {
+      transform: translateX(0);
+    }
+
+    .hamburger {
+      display: flex;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .navLinks {
+      position: absolute;
+      top: 95px;
+      right: 0;
+      height: calc(100vh - 80px);
+      width: 70%;
+      background: #ffff;
+      flex-direction: column;
+      align-items: center;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+
+      li {
+        margin: 1.5rem 0;
+      }
+    }
+
+    .navLinks.open {
+      transform: translateX(0);
+    }
+
+    .hamburger {
+      display: flex;
+    }
+  }
+}
